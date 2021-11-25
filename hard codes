@@ -1,0 +1,56 @@
+search form --------------
+
+<div>
+<form>
+  <input type="text">
+  <select name="" id="">
+    <option value=".com">.com</option>
+    <option value=".net">.net</option>
+    <option value=".org">.org</option>
+    <option value=".cn">.cn</option>
+    <option value=".gov">.gov</option>
+  </select>
+  <button>Send</button>
+</form>
+</div>
+
+---------toggle button --------
+
+<div>
+  <input type="checkbox" id="toggle-button">
+  <label class="toggle" for="toggle-button">
+  </label>
+</div>
+
+toggle button-------css--------
+
+#toggle-button + .toggle {
+  box-sizing: border-box;
+  width: 100px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  border-radius: 9999px;
+  position: relative;
+  padding: 0 .5em;
+  border: 1px inset ThreeDLightShadow;
+  box-shadow: 2px 2px 4px ThreeDLightShadow;
+}
+#toggle-button + .toggle::after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  background: ThreeDDarkShadow;
+  position: absolute;
+  border-radius: 50%;
+  transition: 1s ease;
+  left: .5em;
+}
+#toggle-button:checked + .toggle::after{
+  left: calc(100% - .5em - 25px);
+}
+#toggle-button{
+  display: none;
+}
+
+------------------------------
