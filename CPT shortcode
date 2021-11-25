@@ -1,0 +1,29 @@
+CPT short code ----------------
+
+function team_members() { 
+	ob_start();
+	
+	$options = array(
+		'post_type' => 'team',
+		'order' => 'desc',
+		'orderby' => 'date',
+		'posts_per_page' => '6'
+	);
+	
+	$query = new WP_Query( $options );
+     	
+	if ( $query->have_posts() ) {
+		?>
+		<div>
+			Hello, World
+		</div>
+		<?php
+	}	 
+	wp_reset_postdata();
+	return ob_get_clean();
+}	
+
+// Add shortcode
+add_shortcode('team_member', 'team_members'); 
+// Enable shortcode execution inside text widgets
+add_filter('widget_text', 'do_shortcode');
