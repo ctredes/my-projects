@@ -1,0 +1,16 @@
+<script>
+window.addEventListener("load", function(){
+    var posts = document.querySelectorAll(".cstm-post .elementor-post")
+    for(let i = 0; i < posts.length; i++) {
+        var meta = posts[i].querySelector(".elementor-post__meta-data")
+        var text = posts[i].querySelector(".elementor-post__text")
+        var avatar = posts[i].querySelector(".elementor-post__avatar")
+        var container = document.createElement("div")
+
+        container.className = "author-container"
+        text.append(container)
+        container.append(avatar)
+        container.append(meta)
+    }
+})
+</script>
