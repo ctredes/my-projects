@@ -1,0 +1,17 @@
+<script>
+window.addEventListener('load', function(){
+var cstmBtn = {
+    'prev': document.querySelectorAll(".cstm-pagination .elementor-icon-list-item")[0],
+    'next': document.querySelectorAll(".cstm-pagination .elementor-icon-list-item")[1]
+}
+
+var srcBtn = {
+    'prev': document.querySelector('.cstm-post .prev'),
+    'next': document.querySelector('.cstm-post .next')
+}
+
+for(let i in cstmBtn){
+    cstmBtn[i].addEventListener('click', () => srcBtn[i].click())
+}
+})
+</script>
